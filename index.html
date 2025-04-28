@@ -3,29 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clothing Store</title>
+  <title>Orchid Malaysia - Clothing Store</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Products</a>
-    <a href="#">Contact</a>
-  </nav>
+
   <header>
-    <h1>Welcome to Our Clothing Store!</h1>
-    <p>Find your style today.</p>
+    <h1>Orchid Malaysia</h1>
+    <p>Pakistan Fashion Dress Collection</p>
   </header>
-  <section>
-    <h2>Products</h2>
-    <ul>
-      <li>T-shirt - $20</li>
-      <li>Jeans - $40</li>
-      <li>Jacket - $60</li>
-    </ul>
-  </section>
-  <footer>
-    <p>Contact us: support@clothingstore.com</p>
-  </footer>
+
+  <main class="products">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400.png?text=Dress+1" alt="Dress 1">
+      <h2>Elegant Dress</h2>
+      <p>Price: 25,000 MMK</p>
+      <a href="checkout.html" class="btn">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400.png?text=Dress+2" alt="Dress 2">
+      <h2>Party Wear</h2>
+      <p>Price: 35,000 MMK</p>
+      <a href="checkout.html" class="btn">Buy Now</a>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/300x400.png?text=Dress+3" alt="Dress 3">
+      <h2>Casual Style</h2>
+      <p>Price: 28,000 MMK</p>
+      <a href="checkout.html" class="btn">Buy Now</a>
+    </div>
+  </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Shipping Information</h1>
+  </header>
+
+  <form action="payment.html" class="form">
+    <label>Full Name</label>
+    <input type="text" required>
+
+    <label>Phone Number</label>
+    <input type="tel" required>
+
+    <label>Address</label>
+    <textarea required></textarea>
+
+    <button type="submit" class="btn">Order Done</button>
+  </form>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - KBZ Pay</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Scan QR to Pay</h1>
+  </header>
+
+  <main class="payment">
+    <img src="DB461B50-A69F-4C4F-97FB-01C10C334317.jpeg" alt="KBZ Pay QR" class="qr">
+
+    <form action="thankyou.html" class="form">
+      <label>Upload Payment Screenshot</label>
+      <input type="file" accept="image/*" required>
+      <button type="submit" class="btn">Submit Screenshot</button>
+    </form>
+  </main>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Complete</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.onload = function() {
+      const orderNumber = 'ORD' + Math.floor(Math.random() * 1000000);
+      document.getElementById('orderNum').innerText = orderNumber;
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Thank You!</h1>
+  </header>
+
+  <main class="thankyou">
+    <p>Your Order Number is:</p>
+    <h2 id="orderNum"></h2>
+    <p>Please click below to send the screenshot to our Facebook Page.</p>
+    <a href="http://m.me/OrchidMalaysiaRangoon" class="btn">Send to Facebook Page</a>
+  </main>
+
 </body>
 </html>
