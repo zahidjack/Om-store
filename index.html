@@ -2,10 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Orchid Malaysia - Clothing Store</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+    .form, .payment, .thankyou {
+      margin-top: 30px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form input, .form textarea {
+      padding: 10px;
+      margin-top: 10px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn-secondary {
+      background: #17a2b8;
+    }
+    .qr {
+      width: 300px;
+      margin: 20px auto;
+    }
+    #orderNum {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #333;
+    }
+  </style>
 </head>
+
 <body>
 
   <header>
@@ -13,110 +86,77 @@
     <p>Pakistan Fashion Dress Collection</p>
   </header>
 
-  <main class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/300x400.png?text=Dress+1" alt="Dress 1">
-      <h2>Elegant Dress</h2>
-      <p>Price: 25,000 MMK</p>
-      <a href="checkout.html" class="btn">Buy Now</a>
+  <div class="container">
+
+    <!-- Product Page -->
+    <div class="products" id="productsPage">
+      <div class="product">
+        <img src="https://via.placeholder.com/300x400.png?text=Dress+1" alt="Dress 1">
+        <h2>Elegant Dress</h2>
+        <p>Price: 25,000 MMK</p>
+        <button class="btn" onclick="showForm()">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/300x400.png?text=Dress+2" alt="Dress 2">
+        <h2>Party Wear</h2>
+        <p>Price: 35,000 MMK</p>
+        <button class="btn" onclick="showForm()">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/300x400.png?text=Dress+3" alt="Dress 3">
+        <h2>Casual Style</h2>
+        <p>Price: 28,000 MMK</p>
+        <button class="btn" onclick="showForm()">Buy Now</button>
+      </div>
     </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x400.png?text=Dress+2" alt="Dress 2">
-      <h2>Party Wear</h2>
-      <p>Price: 35,000 MMK</p>
-      <a href="checkout.html" class="btn">Buy Now</a>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/300x400.png?text=Dress+3" alt="Dress 3">
-      <h2>Casual Style</h2>
-      <p>Price: 28,000 MMK</p>
-      <a href="checkout.html" class="btn">Buy Now</a>
-    </div>
-  </main>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shipping Details</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <header>
-    <h1>Shipping Information</h1>
-  </header>
-
-  <form action="payment.html" class="form">
-    <label>Full Name</label>
-    <input type="text" required>
-
-    <label>Phone Number</label>
-    <input type="tel" required>
-
-    <label>Address</label>
-    <textarea required></textarea>
-
-    <button type="submit" class="btn">Order Done</button>
-  </form>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment - KBZ Pay</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <header>
-    <h1>Scan QR to Pay</h1>
-  </header>
-
-  <main class="payment">
-    <img src="DB461B50-A69F-4C4F-97FB-01C10C334317.jpeg" alt="KBZ Pay QR" class="qr">
-
-    <form action="thankyou.html" class="form">
-      <label>Upload Payment Screenshot</label>
-      <input type="file" accept="image/*" required>
-      <button type="submit" class="btn">Submit Screenshot</button>
+    <!-- Shipping Form Page -->
+    <form id="shippingForm" class="form" onsubmit="event.preventDefault(); showPayment();">
+      <h2>Shipping Information</h2>
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <textarea placeholder="Address" rows="4" required></textarea>
+      <button type="submit" class="btn">Order Done</button>
     </form>
-  </main>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Complete</title>
-  <link rel="stylesheet" href="styles.css">
+    <!-- Payment Page -->
+    <div id="paymentPage" class="payment">
+      <h2>Scan KBZPay QR to Pay</h2>
+      <img src="DB461B50-A69F-4C4F-97FB-01C10C334317.jpeg" alt="KBZ Pay QR" class="qr">
+      <form onsubmit="event.preventDefault(); showThankyou();" class="form">
+        <label>Upload Payment Screenshot</label>
+        <input type="file" accept="image/*" required>
+        <button type="submit" class="btn">Submit Screenshot</button>
+      </form>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thankyouPage" class="thankyou">
+      <h2>Thank You!</h2>
+      <p>Your Order Number is:</p>
+      <h2 id="orderNum"></h2>
+      <p>Please send your payment screenshot to our Facebook Page.</p>
+      <a href="http://m.me/OrchidMalaysiaRangoon" class="btn btn-secondary">Send to Messenger</a>
+    </div>
+
+  </div>
+
   <script>
-    window.onload = function() {
+    function showForm() {
+      document.getElementById('productsPage').style.display = 'none';
+      document.getElementById('shippingForm').style.display = 'flex';
+    }
+    function showPayment() {
+      document.getElementById('shippingForm').style.display = 'none';
+      document.getElementById('paymentPage').style.display = 'block';
+    }
+    function showThankyou() {
+      document.getElementById('paymentPage').style.display = 'none';
+      document.getElementById('thankyouPage').style.display = 'block';
       const orderNumber = 'ORD' + Math.floor(Math.random() * 1000000);
       document.getElementById('orderNum').innerText = orderNumber;
     }
   </script>
-</head>
-<body>
-
-  <header>
-    <h1>Thank You!</h1>
-  </header>
-
-  <main class="thankyou">
-    <p>Your Order Number is:</p>
-    <h2 id="orderNum"></h2>
-    <p>Please click below to send the screenshot to our Facebook Page.</p>
-    <a href="http://m.me/OrchidMalaysiaRangoon" class="btn">Send to Facebook Page</a>
-  </main>
 
 </body>
 </html>
