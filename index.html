@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orchid Malaysia - Clothing Store</title>
+  <title>Orchid Malaysia - Pakistan Clothing Store</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@
     }
     .container {
       padding: 20px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: auto;
     }
     .products {
@@ -33,12 +33,13 @@
       padding: 15px;
       border-radius: 10px;
       text-align: center;
-      width: 250px;
+      width: 220px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .product img {
       width: 100%;
-      height: auto;
+      height: 300px;
+      object-fit: cover;
       border-radius: 5px;
     }
     .form, .payment, .thankyou {
@@ -90,24 +91,42 @@
 
     <!-- Product Page -->
     <div class="products" id="productsPage">
+      
       <div class="product">
-        <img src="https://via.placeholder.com/300x400.png?text=Dress+1" alt="Dress 1">
+        <img src="https://i.ibb.co/Z2HXXQW/pakistan-dress-1.jpg" alt="Elegant Dress">
         <h2>Elegant Dress</h2>
         <p>Price: 25,000 MMK</p>
         <button class="btn" onclick="showForm()">Buy Now</button>
       </div>
+
       <div class="product">
-        <img src="https://via.placeholder.com/300x400.png?text=Dress+2" alt="Dress 2">
+        <img src="https://i.ibb.co/qB0vYkN/pakistan-dress-2.jpg" alt="Party Wear">
         <h2>Party Wear</h2>
         <p>Price: 35,000 MMK</p>
         <button class="btn" onclick="showForm()">Buy Now</button>
       </div>
+
       <div class="product">
-        <img src="https://via.placeholder.com/300x400.png?text=Dress+3" alt="Dress 3">
-        <h2>Casual Style</h2>
+        <img src="https://i.ibb.co/6BHmGWg/pakistan-dress-3.jpg" alt="Daily Wear">
+        <h2>Daily Wear</h2>
         <p>Price: 28,000 MMK</p>
         <button class="btn" onclick="showForm()">Buy Now</button>
       </div>
+
+      <div class="product">
+        <img src="https://i.ibb.co/sqR0MT4/pakistan-dress-4.jpg" alt="Fancy Embroidery Dress">
+        <h2>Fancy Embroidery Dress</h2>
+        <p>Price: 45,000 MMK</p>
+        <button class="btn" onclick="showForm()">Buy Now</button>
+      </div>
+
+      <div class="product">
+        <img src="https://i.ibb.co/F5FLqj2/pakistan-dress-5.jpg" alt="Bridal Style Dress">
+        <h2>Bridal Style Dress</h2>
+        <p>Price: 65,000 MMK</p>
+        <button class="btn" onclick="showForm()">Buy Now</button>
+      </div>
+
     </div>
 
     <!-- Shipping Form Page -->
@@ -115,7 +134,7 @@
       <h2>Shipping Information</h2>
       <input type="text" placeholder="Full Name" required>
       <input type="tel" placeholder="Phone Number" required>
-      <textarea placeholder="Address" rows="4" required></textarea>
+      <textarea placeholder="Full Address" rows="4" required></textarea>
       <button type="submit" class="btn">Order Done</button>
     </form>
 
@@ -160,23 +179,3 @@
 
 </body>
 </html>
-<div class="products" id="productsPage">
-  <div class="product">
-    <img src="https://i.ibb.co/Z2HXXQW/pakistan-dress-1.jpg" alt="Elegant Dress">
-    <h2>Elegant Dress</h2>
-    <p>Price: 25,000 MMK</p>
-    <button class="btn" onclick="showForm()">Buy Now</button>
-  </div>
-  <div class="product">
-    <img src="https://i.ibb.co/qB0vYkN/pakistan-dress-2.jpg" alt="Party Wear">
-    <h2>Party Wear</h2>
-    <p>Price: 35,000 MMK</p>
-    <button class="btn" onclick="showForm()">Buy Now</button>
-  </div>
-  <div class="product">
-    <img src="https://i.ibb.co/6BHmGWg/pakistan-dress-3.jpg" alt="Casual Style">
-    <h2>Casual Style</h2>
-    <p>Price: 28,000 MMK</p>
-    <button class="btn" onclick="showForm()">Buy Now</button>
-  </div>
-</div>
